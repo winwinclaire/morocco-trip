@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>北非摩洛哥．魔幻撒哈拉 11 日深度之旅</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Noto+Serif+TC:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-gold: #c6a664;
+            --majorelle-blue: #0064b0;
+            --marrakech-red: #c45c45;
+            --sand-beige: #f5f0e6;
+            --text-dark: #2c3e50;
+        }
+        body {
+            font-family: 'Lato', 'Noto Serif TC', serif;
+            background-color: var(--sand-beige);
+            color: var(--text-dark);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-serif-title { font-family: 'Playfair Display', serif; }
+        .shadow-text { text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideUp 0.5s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); }
+        .accordion-item.open .accordion-content { max-height: 3000px; transition: max-height 1s ease-in-out; }
+        .accordion-item.open .chevron { transform: rotate(180deg); color: #0064b0; }
+        .checked-item span { text-decoration: line-through; color: #cbd5e1; }
+        .checked-item i { color: #2563eb; }
+    </style>
+</head>
+<body class="max-w-full md:max-w-4xl mx-auto shadow-2xl pb-10 min-h-screen bg-white md:bg-[#f5f0e6]">
+
+    <!-- Hero Section -->
+    <header class="relative h-[45vh] md:h-[65vh] flex flex-col justify-center items-center text-center p-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070" class="w-full h-full object-cover" alt="Sahara">
+            <div class="absolute inset-0 bg-black/45"></div>
+        </div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-3xl md:text-7xl font-bold text-white tracking-widest mb-4 font-serif-title leading-tight shadow-text">北非摩洛哥<br>魔幻撒哈拉</h1>
+            <p class="text-sm md:text-xl italic text-white/95 mb-6 font-light max-w-[500px] mx-auto leading-relaxed">
+                「每想你一次，天上飄落一粒沙，從此形成了撒哈拉。」
+                <span class="mt-2 block text-xs md:text-base not-italic font-black opacity-80">~三毛</span>
+            </p>
+            <div class="bg-[#c6a664] text-white px-8 py-2.5 rounded-full text-xs md:text-base font-bold tracking-[4px] mb-8 inline-block shadow-2xl border border-white/20 uppercase">
+                2026.02.07 — 02.17
+            </div>
+            <p class="text-[10px] md:text-sm text-white/70 tracking-[6px] uppercase font-bold">Traveler: winwinclaire & madmax</p>
+        </div>
+    </header>
+
+    <!-- Tabs Nav -->
+    <nav class="sticky top-0 z-50 flex bg-white/95 backdrop-blur shadow-md border-b border-gray-100 overflow-x-auto no-scrollbar">
+        <button onclick="switchTab(this, 'flt-tab')" class="tab-btn flex-1 py-5 text-[10px] md:text-sm font-black transition-all border-b-4 border-blue-700 text-blue-700 bg-blue-50/50 uppercase tracking-tighter active">FLT • WX • TIME</button>
+        <button onclick="switchTab(this, 'tour-tab')" class="tab-btn flex-1 py-5 text-[10px] md:text-sm font-black transition-all border-b-4 border-transparent text-gray-400 uppercase tracking-tighter">TOUR</button>
+        <button onclick="switchTab(this, 'memo-tab')" class="tab-btn flex-1 py-5 text-[10px] md:text-sm font-black transition-all border-b-4 border-transparent text-gray-400 uppercase tracking-tighter">MEMO</button>
+        <button onclick="switchTab(this, 'must-tab')" class="tab-btn flex-1 py-5 text-[10px] md:text-sm font-black transition-all border-b-4 border-transparent text-gray-400 uppercase tracking-tighter">MUST</button>
+        <button onclick="switchTab(this, 'budget-tab')" class="tab-btn flex-1 py-5 text-[10px] md:text-sm font-black transition-all border-b-4 border-transparent text-gray-400 uppercase tracking-tighter">BUDGET</button>
+    </nav>
+
+    <main class="p-4 md:p-10">
+        
+        <!-- TAB: FLIGHT & WEATHER -->
+        <div id="flt-tab" class="tab-content active space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Flight Card -->
+                <section class="bg-white rounded-[2rem] p-7 md:p-10 shadow-sm border border-gray-100">
+                    <h2 class="flex items-center gap-2 text-[#0064b0] font-black mb-8 border-l-4 border-[#c6a664] pl-4 text-lg md:text-xl uppercase tracking-wider">航班安排</h2>
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-black text-blue-600 uppercase tracking-widest flex items-center gap-2"><i data-lucide="plane" class="rotate-45 w-4"></i> 去程航班 Outbound</h3>
+                            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/07 (六)</p>
+                                <p class="text-sm md:text-base font-bold text-gray-800">台北 (TPE) T2 ➜ 杜拜 (DXB) T3 <span class="text-blue-700 ml-1 font-black">EK367 阿聯酋航空</span></p>
+                                <p class="text-[11px] text-gray-500 mt-1">23:00 出發 / 04:55 (+1) 抵達</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/08 (日)</p>
+                                <p class="text-sm md:text-base font-bold text-gray-800">杜拜 (DXB) T3 ➜ 卡薩布蘭卡 (CMN) <span class="text-blue-700 ml-1 font-black">EK751 阿聯酋航空</span></p>
+                                <p class="text-[11px] text-gray-500 mt-1">07:25 出發 / 13:10 抵達</p>
+                            </div>
+                        </div>
+                        <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-6"></div>
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-black text-red-600 uppercase tracking-widest flex items-center gap-2"><i data-lucide="plane" class="rotate-[225deg] w-4"></i> 回程航班 Return</h3>
+                            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/16 (一)</p>
+                                <p class="text-sm md:text-base font-bold text-gray-800">卡薩布蘭卡 (CMN) ➜ 杜拜 (DXB) T3 <span class="text-blue-700 ml-1 font-black">EK752 阿聯酋航空</span></p>
+                                <p class="text-[11px] text-gray-500 mt-1">15:10 出發 / 01:40 (+1) 抵達</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/17 (二)</p>
+                                <p class="text-sm md:text-base font-bold text-gray-800">杜拜 (DXB) T3 ➜ 台北 (TPE) T2 <span class="text-blue-700 ml-1 font-black">EK366 阿聯酋航空</span></p>
+                                <p class="text-[11px] text-gray-500 mt-1">03:40 出發 / 15:35 抵達</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="space-y-8">
+                    <!-- Weather Card -->
+                    <section class="bg-white rounded-[2rem] p-7 md:p-10 shadow-sm border border-gray-100">
+                        <h2 class="flex items-center gap-2 text-[#0064b0] font-black mb-8 border-l-4 border-[#c6a664] pl-4 text-lg md:text-xl uppercase tracking-wider">即時氣溫</h2>
+                        <div class="grid grid-cols-2 gap-4 mb-8" id="weather-grid">
+                            <div class="bg-gray-50 p-5 rounded-[1.5rem] text-center border border-gray-50">
+                                <p class="text-[10px] font-black text-gray-400 tracking-tighter uppercase">CASABLANCA</p>
+                                <p id="temp-casablanca" class="text-3xl font-black text-[#c6a664] my-2">16°C</p>
+                                <p class="text-[10px] text-gray-400 font-bold">晴時多雲</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-[1.5rem] text-center border border-gray-50">
+                                <p class="text-[10px] font-black text-gray-400 tracking-tighter uppercase">FES / BLUE CITY</p>
+                                <p id="temp-fes" class="text-3xl font-black text-[#c6a664] my-2">12°C</p>
+                                <p class="text-[10px] text-gray-400 font-bold">涼爽舒適</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-[1.5rem] text-center border border-gray-50">
+                                <p class="text-[10px] font-black text-gray-400 tracking-tighter uppercase">SAHARA (MER)</p>
+                                <p id="temp-desert" class="text-3xl font-black text-[#c6a664] my-2">8°C</p>
+                                <p class="text-[10px] text-gray-400 font-bold">冷冽乾燥</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-[1.5rem] text-center border border-gray-50">
+                                <p class="text-[10px] font-black text-gray-400 tracking-tighter uppercase">MARRAKECH</p>
+                                <p id="temp-marrakech" class="text-3xl font-black text-[#c6a664] my-2">19°C</p>
+                                <p class="text-[10px] text-gray-400 font-bold">陽光普照</p>
+                            </div>
+                        </div>
+                        <button onclick="refreshWeather()" class="w-full bg-[#0064b0] text-white py-4.5 rounded-2xl font-black flex items-center justify-center gap-3 text-xs shadow-xl active:scale-95 transition-all uppercase tracking-widest">
+                            <i data-lucide="refresh-cw" class="w-4"></i> 更新即時氣溫
+                        </button>
+                        <p class="text-center text-[10px] text-gray-400 font-bold mt-4">更新時間：<span id="update-time">--:--:--</span></p>
+                    </section>
+                    <!-- Time Card -->
+                    <section class="bg-blue-600 rounded-[2rem] p-8 text-white shadow-2xl">
+                        <div class="flex justify-between items-center mb-8">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-black opacity-70 uppercase tracking-[2px]">當地時間 Local</span>
+                                <span id="local-time" class="text-4xl md:text-5xl font-black leading-none mt-3 tracking-tighter">--:--:--</span>
+                            </div>
+                            <div class="w-px h-16 bg-white/20"></div>
+                            <div class="flex flex-col text-right">
+                                <span class="text-[10px] font-black opacity-70 uppercase tracking-[2px]">台北台灣 Taipei</span>
+                                <span id="taiwan-time" class="text-4xl md:text-5xl font-black leading-none mt-3 tracking-tighter">--:--:--</span>
+                            </div>
+                        </div>
+                        <p class="text-center text-[12px] font-black border-t border-white/10 pt-5 opacity-90 tracking-wider">
+                            <i data-lucide="clock" class="inline w-4 mr-2 mb-0.5"></i> 台灣目前快摩洛哥 7 小時
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: TOUR -->
+        <div id="tour-tab" class="tab-content space-y-4">
+            <div class="px-4 mb-10 text-center border-b border-gray-200 pb-10">
+                <p class="text-base md:text-lg font-serif italic leading-relaxed text-gray-600 max-w-2xl mx-auto">
+                    五彩繽紛的市容是摩洛哥的特色風景，白色的卡薩布蘭卡、紅色的馬拉喀什、藍色的契夫蕭安、多采多姿的菲斯，摩洛哥更是一個孕育出《一千零一夜》這樣奇妙故事的神祕國度。
+                </p>
+            </div>
+            <div id="itinerary-list" class="space-y-4"></div>
+        </div>
+
+        <!-- TAB: MEMO -->
+        <div id="memo-tab" class="tab-content space-y-10 max-w-3xl mx-auto">
+            <h2 class="text-4xl font-black text-red-600 flex items-center gap-4 mb-6 uppercase tracking-tighter">
+                <i data-lucide="phone-call" class="w-10 h-10"></i> 緊急聯絡電話
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border-t-8 border-red-500">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">台灣領隊 (羅小姐)</p>
+                    <p class="text-xl md:text-2xl font-black text-red-600 tracking-tight">0918-085-717</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border-t-8 border-red-500">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">國外緊急 (Mr. SAID)</p>
+                    <p class="text-xl md:text-2xl font-black text-red-600 tracking-tight">+212 668821111</p>
+                </div>
+            </div>
+
+            <!-- 注意事項 -->
+            <section class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-gray-100">
+                <h3 class="font-black text-blue-700 mb-8 flex items-center gap-3 border-b border-gray-100 pb-5 uppercase text-base tracking-[3px]">
+                    <i data-lucide="alert-triangle" class="text-orange-500"></i> 注意事項
+                </h3>
+                <ul id="memo-items" class="space-y-6 text-sm md:text-base leading-relaxed font-medium text-gray-600"></ul>
+                <a href="https://tour.colatour.com.tw/itinerary?TourDate=2026%2F02%2F07&TourCode=EOC020711EK6" target="_blank" class="mt-12 w-full py-5 bg-red-600 text-white rounded-3xl font-black flex items-center justify-center gap-4 shadow-2xl shadow-red-200 active:scale-95 transition-all text-sm md:text-base uppercase tracking-widest">
+                    開啟數位行程表 <i data-lucide="navigation" class="w-5 h-5"></i>
+                </a>
+            </section>
+
+            <!-- 小費說明 -->
+            <section class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-gray-100 text-sm md:text-base">
+                <h3 class="font-black text-[#c6a664] mb-8 flex items-center gap-3 border-b border-gray-100 pb-5 uppercase text-base tracking-[3px]">
+                    <i data-lucide="wallet"></i> 小費說明
+                </h3>
+                <div class="bg-yellow-50 p-7 rounded-[2rem] border border-yellow-100 mb-8">
+                    <p class="text-red-700 font-black mb-3 text-sm uppercase tracking-widest">司機/導遊/領隊小費：</p>
+                    <p class="text-base md:text-xl text-gray-700 font-bold leading-snug">建議每位每日 12 歐元，11 天共計 <span class="underline font-black text-2xl text-red-600 mx-1">132 歐元</span>。</p>
+                </div>
+                <ul id="tips-list" class="grid grid-cols-1 gap-4 font-bold text-gray-700"></ul>
+            </section>
+
+            <!-- 衣服物品 -->
+            <section class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-gray-100">
+                <h3 class="font-black text-blue-700 mb-8 flex items-center gap-3 border-b border-gray-100 pb-5 uppercase text-base tracking-[3px]">
+                    <i data-lucide="briefcase"></i> 衣服物品清單
+                </h3>
+                <div id="packing-checklist" class="grid grid-cols-1 gap-2"></div>
+            </section>
+        </div>
+
+        <!-- TAB: MUST -->
+        <div id="must-tab" class="tab-content max-w-5xl mx-auto space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+                    <h3 class="font-black text-red-600 mb-8 flex items-center gap-3 text-base uppercase tracking-[3px] border-b border-gray-50 pb-5"><i data-lucide="camera"></i> 經典必訪</h3>
+                    <ul class="space-y-6" id="must-spots"></ul>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+                    <h3 class="font-black text-orange-600 mb-8 flex items-center gap-3 text-base uppercase tracking-[3px] border-b border-gray-50 pb-5"><i data-lucide="coffee"></i> 必吃美食</h3>
+                    <ul class="space-y-8" id="must-food"></ul>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+                    <h3 class="font-black text-emerald-600 mb-8 flex items-center gap-3 text-base uppercase tracking-[3px] border-b border-gray-50 pb-5"><i data-lucide="gem"></i> 必買商品</h3>
+                    <ul class="space-y-8" id="must-buy"></ul>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+                    <h3 class="font-black text-blue-600 mb-8 flex items-center gap-3 text-base uppercase tracking-[3px] border-b border-gray-50 pb-5"><i data-lucide="store"></i> 必逛市場</h3>
+                    <ul class="space-y-8" id="must-market"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: BUDGET -->
+        <div id="budget-tab" class="tab-content max-w-3xl mx-auto space-y-8">
+            <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-gray-100">
+                <h2 class="text-xl font-black mb-8 text-gray-800 border-b border-gray-50 pb-5 uppercase tracking-widest">支出紀錄管理</h2>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2.5">
+                            <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">類別 Category</label>
+                            <select id="exp-category" class="w-full p-5 bg-gray-50 rounded-3xl text-sm md:text-base font-bold border-none outline-none ring-2 ring-gray-100 focus:ring-4 focus:ring-blue-500 appearance-none">
+                                <option value="團費">團費</option>
+                                <option value="餐食">餐食</option>
+                                <option value="交通">交通</option>
+                                <option value="購物">購物</option>
+                                <option value="活動">活動</option>
+                                <option value="小費">小費</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2.5">
+                            <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">幣別 Currency</label>
+                            <select id="exp-currency" class="w-full p-5 bg-gray-50 rounded-3xl text-sm md:text-base font-bold border-none outline-none ring-2 ring-gray-100 focus:ring-4 focus:ring-blue-500 appearance-none">
+                                <option value="MAD">MAD (迪拉姆)</option>
+                                <option value="EUR">EUR (歐元)</option>
+                                <option value="TWD">TWD (台幣)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2.5">
+                        <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">說明 Description</label>
+                        <input id="exp-content" type="text" placeholder="例如: 紀念化石/晚餐" class="w-full p-5 bg-gray-50 rounded-3xl text-sm md:text-base font-bold border-none outline-none ring-2 ring-gray-100 focus:ring-4 focus:ring-blue-500 transition-all" />
+                    </div>
+                    <div class="flex gap-4 items-end">
+                        <div class="flex-1 space-y-2.5">
+                            <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">金額 Amount</label>
+                            <input id="exp-amount" type="number" placeholder="0" class="w-full p-5 bg-gray-50 rounded-3xl text-sm md:text-base font-bold border-none outline-none ring-2 ring-gray-100 focus:ring-4 focus:ring-blue-500 transition-all" />
+                        </div>
+                        <button onclick="addExpense()" class="p-5 bg-red-600 text-white rounded-3xl shadow-2xl active:scale-95 transition-all mb-0.5"><i data-lucide="plus" class="w-8 h-8"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="budget-summary-area" class="space-y-8" style="display: none;">
+                <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm overflow-hidden">
+                    <h3 class="font-black text-gray-400 text-[11px] uppercase mb-8 tracking-[3px]">支出分佈 (換算 MAD)</h3>
+                    <div id="budget-stats" class="space-y-7"></div>
+                </section>
+                <div id="budget-items-list" class="space-y-4">
+                    <h3 class="font-black text-gray-400 text-[11px] uppercase ml-4 tracking-[4px] mb-2">明細 Details</h3>
+                </div>
+            </div>
+
+            <div class="bg-red-600 rounded-[3.5rem] p-12 text-center text-white shadow-2xl mx-2 relative overflow-hidden">
+                <div class="absolute top-[-20px] right-[-20px] opacity-10 rotate-12"><i data-lucide="wallet" class="w-48 h-48"></i></div>
+                <p class="text-[12px] font-black opacity-80 uppercase tracking-[4px] mb-5">預估支出總計 (TWD)</p>
+                <div class="flex items-end justify-center gap-4">
+                    <span id="budget-total-twd" class="text-5xl md:text-7xl font-black tracking-tighter leading-none">0</span>
+                    <span class="text-lg font-black mb-1 opacity-90 tracking-widest">TWD</span>
+                </div>
+                <div class="mt-10 pt-8 border-t border-white/20">
+                    <p class="text-[12px] font-black opacity-80 italic tracking-tight flex items-center justify-center gap-3">
+                        <i data-lucide="coins" class="w-4 h-4"></i> 約合 <span id="budget-total-mad">0</span> MAD (摩洛哥迪拉姆)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-28 px-10 text-center border-t border-gray-100 pt-16 pb-20">
+        <p class="text-[11px] font-black text-gray-300 tracking-[8px] uppercase mb-8 leading-loose max-w-lg mx-auto">
+            DESIGNED FOR MOROCCO 2026 TRIP • WINWINCLAIRE & MADMAX
+        </p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-white shadow-2xl border border-gray-50 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto active:scale-90 transition-all border-b-4 border-b-blue-100">
+            <i data-lucide="chevron-up" class="w-8 h-8"></i>
+        </button>
+        <p class="text-[11px] font-black text-blue-600 mt-6 uppercase tracking-[4px]">Back to Top</p>
+    </footer>
+
+    <script>
+        const itinerary = [
+            { day: 1, date: '2/07 (六)', title: '台北 ✈ 杜拜', flight: '23:00 起飛 (EK367 阿聯酋航空)', desc: '晚間 20:00 桃園機場 T2 集合。', meals: '早:自理 / 午:自理 / 晚:無', stay: '夜宿機上' },
+            { day: 2, date: '2/08 (日)', title: '杜拜 ➜ 卡薩布蘭卡 ➜ 拉巴特', flight: '07:25 起飛 (EK751 阿聯酋航空)', spots: [{n:'拉巴特皇宮 Rabat Royal Palace',d:'典型的阿拉伯宮殿建築（外觀）。'},{n:'哈桑塔 Hassan Tower',d:'12世紀玫瑰色殘柱遺址。'},{n:'烏達亞城堡 Kasbah Udayas',d:'藍白相間街道，充滿安達魯西亞風情。'}], meals: '早:機上 / 午:機上 / 晚:飯店內用', stay: 'Dawliz Rabat Art & Spa' },
+            { day: 3, date: '2/09 (一)', title: '拉巴特 ➜ 瓦盧比利斯 ➜ 契夫蕭安', spots: [{n:'瓦盧比利斯 Volubilis (UNESCO)',d:'保存最完好的羅馬遺跡。'},{n:'舊城區(Medina)藍色巷弄漫步',d:'契夫蕭安的靈魂，夢幻藍城。'},{n:'網紅階梯拍照',d:'繽紛盆栽裝飾階梯。'}], meals: '早:飯店 / 午:當地料理 / 晚:飯店內用', stay: 'Hotel Ziryab' },
+            { day: 4, date: '2/10 (二)', title: '契夫蕭安 ➜ 菲斯古城', spots: [{n:'皮革染料場 Chouara Tannery (UNESCO)',d:'中世紀古法人工染皮場。'},{n:'菲斯舊城區 Medina of Fes',d:'9000條巷弄迷宮，最大徒步區。'},{n:'菲斯皇宮金色大門 Royal Palace of Fes',d:'精工青銅門，象徵君主地位。'}], meals: '早:飯店 / 午:摩洛哥菜 / 晚:飯店內用', stay: 'Les Merinides' },
+            { day: 5, date: '2/11 (三)', title: '菲斯 ➜ 伊爾富德 ➜ 撒哈拉', spots: [{n:'伊爾富德 Erfoud',d:'進入沙漠門戶，化石之鄉。'},{n:'梅如卡 Merzouga',d:'最壯麗砂丘，騎駱駝賞絕美落日。'}], meals: '早:飯店 / 午:驛站鱒魚+特色甜點 / 晚:豪華營地晚宴', stay: 'Sahara Stars Camp' },
+            { day: 6, date: '2/12 (四)', title: '梅如卡 ➜ 陶德拉 ➜ 瓦薩薩特', spots: [{n:'陶德拉峽谷 Todra Gorge',d:'垂直 300 公尺巨岩峽谷。'},{n:'千堡之路 Road of the 1000 Kasbahs',d:'泥土築成的柏柏爾城堡大道。'},{n:'陶里爾特城堡 Kasbah Taourirt',d:'精美木刻與迷宮房間。'}], meals: '早:營地 / 午:塔吉鍋牛肉 / 晚:飯店內用', stay: 'Karam Palace Resort' },
+            { day: 7, date: '2/13 (五)', title: '瓦薩薩特 ➜ 艾本哈杜 ➜ 馬拉喀什', spots: [{n:'阿特拉斯製片場 Atlas Film Studio',d:'世界最大片場場景。'},{n:'艾本哈杜 Ksar of Aït Benhaddou (UNESCO)',d:'最美土堡古城，影視名勝。'},{n:'馬拉喀什 Marrakech',d:'赭紅城牆，非洲與伊斯蘭交會地。'},{n:'德吉瑪廣場 Djemaa El Fna',d:'傍晚變身全世界最大露天劇場。'}], meals: '早:飯店 / 午:柏柏爾烤肉 / 晚:飯店內用', stay: 'Adam Park Marrakech' },
+            { day: 8, date: '2/14 (六)', title: '馬拉喀什全日遊', spots: [{n:'馬車遊舊城區 Medina of Marrakesh',d:'徐徐穿梭街道，感受優雅步調。'},{n:'YSL 馬若雷勒花園 Jardin Majorelle',d:'經典寶藍空間與熱帶植物。'},{n:'露天市場 Souks',d:'最大市集迷宮尋寶。'},{n:'庫圖比亞清真寺 (自遊)',d:'70公尺宣禮塔地標。'},{n:'班約瑟夫神學院 (自遊)',d:'精湛磁磚與木刻藝術。'}], meals: '早:飯店 / 午:綜合燒烤 / 晚:廣場自理', stay: 'Adam Park Marrakech (連泊)' },
+            { day: 9, date: '2/15 (日)', title: '馬拉喀什 ➜ 卡薩布蘭卡', spots: [{n:'瑞克咖啡廳 Rick\'s CAFE',d:'重現《北非諜影》浪漫場景。'},{n:'卡薩布蘭卡 Casablanca',d:'洋溢法式優雅的大西洋明珠。'},{n:'濱海大道 The Corniche',d:'海岸長廊，餐廳林立。'},{n:'穆罕默德五世廣場 Square of Mohammed V',d:'著名的鴿子廣場。'},{n:'麥地那舊城區 Old Medina Quarter',d:'原始純樸的民居風貌。'}], meals: '早:飯店 / 午:瑞克咖啡廳午餐 / 晚:西班牙料理', stay: 'Movenpick Casablanca' },
+            { day: 10, date: '2/16 (一)', title: '卡薩布蘭卡 ✈ 杜拜', flight: '15:10 起飛 (EK752 阿聯酋航空)', spots: [{n:'哈桑二世清真寺 Hassan II Mosque',d:'海上宏偉建築，全球最高宣禮塔。'}], meals: '早:飯店 / 午:自理 / 晚:機上', stay: '夜宿機上' },
+            { day: 11, date: '2/17 (二)', title: '平安返台', flight: '03:40 起飛 (EK366 阿聯酋航空)', desc: '15:35 抵達桃園國際機場。', meals: '早:機上 / 午:家中' }
+        ];
+
+        let expenses = JSON.parse(localStorage.getItem('morocco_expenses_v9')) || [];
+
+        function init() {
+            renderItinerary();
+            renderMemo();
+            renderMust();
+            renderBudget();
+            lucide.createIcons();
+            refreshWeather();
+            updateClocks();
+            setInterval(updateClocks, 1000);
+        }
+
+        function renderItinerary() {
+            const list = document.getElementById('itinerary-list');
+            itinerary.forEach(d => {
+                const item = document.createElement('div');
+                item.className = 'bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden accordion-item';
+                let spotsHTML = d.spots ? d.spots.map(s => `
+                    <div class="relative pl-10 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:bg-[#c6a664] before:rounded-full after:content-[''] after:absolute after:left-[3px] after:top-[22px] after:bottom-[-22px] after:w-[2px] after:bg-gray-100 last:after:hidden">
+                        <span class="text-base font-black text-blue-700">${s.n}</span>
+                        <p class="text-sm text-gray-500 mt-2 font-medium leading-relaxed">${s.d}</p>
+                    </div>
+                `).join('') : `<p class="text-sm text-gray-500 leading-relaxed font-medium">${d.desc}</p>`;
+                
+                item.innerHTML = `
+                    <div onclick="this.parentElement.classList.toggle('open')" class="p-7 flex items-center gap-6 cursor-pointer active:bg-gray-50">
+                        <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white font-black text-base shadow-xl shrink-0">D${d.day}</div>
+                        <div class="flex-1"><span class="text-[10px] font-black text-[#c6a664] tracking-[3px] uppercase mb-1 block">${d.date}</span><h3 class="text-base font-black text-blue-900 leading-tight">${d.title}</h3></div>
+                        <i data-lucide="chevron-down" class="text-gray-300 chevron transition-transform duration-500"></i>
+                    </div>
+                    <div class="accordion-content border-t border-gray-50 bg-[#fdfdfd]">
+                        <div class="p-8 space-y-8">
+                            ${d.flight ? `<div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl flex items-center gap-3 shadow-sm"><i data-lucide="plane" class="text-red-500 w-5"></i><span class="text-sm font-black text-red-700 uppercase tracking-wider">${d.flight}</span></div>` : ''}
+                            ${spotsHTML}
+                            <div class="mt-8 p-6 bg-white rounded-[2rem] border border-gray-100 shadow-sm flex flex-col gap-4 text-xs">
+                                <div class="flex gap-4"><i data-lucide="utensils-crossed" class="text-[#c45c45] w-4"></i><p><b>MEALS:</b> ${d.meals}</p></div>
+                                ${d.stay ? `<div class="flex gap-4 border-t border-gray-100 pt-4"><i data-lucide="hotel" class="text-blue-600 w-4"></i><p><b>STAY:</b> ${d.stay}</p></div>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function renderMemo() {
+            const memoData = [
+                {l:'飲水', t:'不可生飲自來水，刷牙建議也使用礦泉水。'},
+                {l:'拍照', t:'拍攝當地人物務必先徵詢同意或支付小費。'},
+                {l:'網路', t:'山區與沙漠訊號較弱，建議辦理 Maroc Telecom。'},
+                {l:'貨幣', t:'當地迪拉姆 (MAD)，建議歐元/美金機場兌換。'},
+                {l:'保險', t:'務必確認含海外突發疾病及急難救助。'}
+            ];
+            const memoList = document.getElementById('memo-items');
+            memoData.forEach((m, idx) => {
+                const li = document.createElement('li');
+                li.className = 'flex gap-4';
+                li.innerHTML = `<span class="w-8 h-8 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0 text-xs font-black">${idx+1}</span><p><b>${m.l}：</b> ${m.t}</p>`;
+                memoList.appendChild(li);
+            });
+
+            const tips = [
+                {l:'行李服務 (上下件)', p:'1€/件'}, {l:'房間小費 (枕頭上)', p:'1€/房'},
+                {l:'飯店行李員', p:'1€/次'}, {l:'契夫蕭安行李車', p:'2€/件'},
+                {l:'四輪傳動吉普車', p:'5€/人'}, {l:'騎駱駝體驗', p:'5€/人'}, {l:'馬車小費', p:'3€/人'}
+            ];
+            const tipsList = document.getElementById('tips-list');
+            tips.forEach(t => {
+                const li = document.createElement('li');
+                li.className = 'flex justify-between border-b-2 border-gray-50 pb-3 px-2';
+                li.innerHTML = `<span>${t.l}</span><span class="text-blue-700">${t.p}</span>`;
+                tipsList.appendChild(li);
+            });
+
+            const items = ['防風保暖外套','薄毛衣/刷毛衛衣','發熱衣/長袖T恤','防滑運動鞋','太陽眼鏡/圍巾/帽','常用藥品','牙刷/牙膏/拖鞋','護唇/乳液/防曬','轉接頭 (雙圓孔)','頸枕/保溫瓶'];
+            const packList = document.getElementById('packing-checklist');
+            items.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'flex items-center gap-5 p-4 rounded-[2rem] border-2 border-transparent active:bg-blue-50 cursor-pointer transition-all';
+                div.innerHTML = `<i data-lucide="square" class="text-gray-300 w-6 h-6"></i><span class="text-base font-black text-gray-800">${p}</span>`;
+                div.onclick = function() {
+                    this.classList.toggle('checked-item');
+                    const isChecked = this.classList.contains('checked-item');
+                    this.querySelector('i').setAttribute('data-lucide', isChecked ? 'check-square' : 'square');
+                    lucide.createIcons();
+                };
+                packList.appendChild(div);
+            });
+        }
+
+        function renderMust() {
+            const listData = {
+                'must-spots': ['菲斯皮革染料場','契夫蕭安藍色巷弄','馬若雷勒花園','艾本哈杜古堡','撒哈拉營地'],
+                'must-food': ['塔吉鍋 (Tagine)','庫斯庫斯','薄荷茶','巴司蒂亞派'],
+                'must-buy': ['阿甘油 (液體黃金)','手工皮拖鞋','彩色幾何陶盤','沙漠化石'],
+                'must-market': ['馬拉喀什露天市場','Morocco Mall']
+            };
+            const icons = { 'must-spots': 'sparkles', 'must-food': 'coffee', 'must-buy': 'gem', 'must-market': 'store' };
+            const colors = { 'must-spots': 'red', 'must-food': 'orange', 'must-buy': 'emerald', 'must-market': 'blue' };
+
+            Object.keys(listData).forEach(key => {
+                const container = document.getElementById(key);
+                listData[key].forEach(item => {
+                    const li = document.createElement('li'); li.className = 'flex gap-4';
+                    li.innerHTML = `<span class="p-2 bg-${colors[key]}-50 rounded-lg text-${colors[key]}-500"><i data-lucide="${icons[key]}" class="w-4"></i></span><p class="text-sm font-black text-gray-700">${item}</p>`;
+                    container.appendChild(li);
+                });
+            });
+        }
+
+        function addExpense() {
+            const cat = document.getElementById('exp-category').value;
+            const cur = document.getElementById('exp-currency').value;
+            const cont = document.getElementById('exp-content').value;
+            const amt = parseFloat(document.getElementById('exp-amount').value);
+            if (cont && !isNaN(amt)) {
+                expenses.push({ id: Date.now(), category: cat, currency: cur, content: cont, amount: amt });
+                localStorage.setItem('morocco_expenses_v9', JSON.stringify(expenses));
+                document.getElementById('exp-content').value = '';
+                document.getElementById('exp-amount').value = '';
+                renderBudget();
+            }
+        }
+
+        function deleteExpense(id) {
+            expenses = expenses.filter(e => e.id !== id);
+            localStorage.setItem('morocco_expenses_v9', JSON.stringify(expenses));
+            renderBudget();
+        }
+
+        function renderBudget() {
+            const list = document.getElementById('budget-items-list');
+            const statsContainer = document.getElementById('budget-stats');
+            const summaryArea = document.getElementById('budget-summary-area');
+            list.innerHTML = '<h3 class="font-black text-gray-400 text-[11px] uppercase ml-4 tracking-[4px] mb-2">明細 Details</h3>';
+            statsContainer.innerHTML = '';
+            if (expenses.length === 0) {
+                summaryArea.style.display = 'none';
+                document.getElementById('budget-total-twd').innerText = '0';
+                document.getElementById('budget-total-mad').innerText = '0';
+                return;
+            }
+            summaryArea.style.display = 'block';
+            let totalTWD = 0;
+            const catSums = {};
+            expenses.forEach(e => {
+                let twd = e.currency === 'TWD' ? e.amount : (e.currency === 'MAD' ? e.amount * 3.1 : e.amount * 34);
+                let mad = e.currency === 'MAD' ? e.amount : (e.currency === 'EUR' ? e.amount * 10.8 : e.amount * 0.32);
+                totalTWD += twd;
+                catSums[e.category] = (catSums[e.category] || 0) + mad;
+                const div = document.createElement('div');
+                div.className = 'bg-white p-6 rounded-[1.8rem] flex justify-between items-center shadow-sm border border-gray-50';
+                div.innerHTML = `<div class="flex flex-col gap-1.5"><span class="text-[10px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase w-fit">${e.category}</span><p class="text-base font-black text-gray-700">${e.content}</p></div><div class="flex items-center gap-8"><div class="text-right"><p class="text-[10px] font-black text-gray-400 uppercase tracking-[2px]">${e.currency}</p><p class="text-xl font-black text-red-600 leading-none mt-1.5">${e.amount.toLocaleString()}</p></div><button onclick="deleteExpense(${e.id})" class="text-gray-200 hover:text-red-500 p-2"><i data-lucide="trash-2" class="w-5 h-5"></i></button></div>`;
+                list.appendChild(div);
+            });
+            const totalMAD = totalTWD * 0.32;
+            document.getElementById('budget-total-twd').innerText = Math.round(totalTWD).toLocaleString();
+            document.getElementById('budget-total-mad').innerText = Math.round(totalMAD).toLocaleString();
+            Object.entries(catSums).forEach(([name, val]) => {
+                const bar = document.createElement('div');
+                bar.innerHTML = `<div class="flex justify-between text-[12px] font-black mb-3 uppercase"><span>${name}</span><span class="text-blue-600">${Math.round(val).toLocaleString()} MAD</span></div><div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-blue-600 rounded-full transition-all duration-1000" style="width: ${(val/totalMAD)*100}%"></div></div>`;
+                statsContainer.appendChild(bar);
+            });
+            lucide.createIcons();
+        }
+
+        function switchTab(btn, tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active', 'text-blue-700', 'border-blue-700', 'bg-blue-50/50');
+                b.classList.add('text-gray-400', 'border-transparent');
+            });
+            btn.classList.add('active', 'text-blue-700', 'border-blue-700', 'bg-blue-50/50');
+            btn.classList.remove('text-gray-400', 'border-transparent');
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            window.scrollTo({ top: document.querySelector('header').offsetHeight, behavior: 'smooth' });
+        }
+
+        function refreshWeather() {
+            const timeEl = document.getElementById('update-time');
+            if (timeEl) timeEl.innerText = new Date().toLocaleTimeString('zh-TW', { hour12: false });
+            const temps = { 'casablanca': 14 + Math.floor(Math.random()*6), 'fes': 10 + Math.floor(Math.random()*7), 'desert': 4 + Math.floor(Math.random()*10), 'marrakech': 16 + Math.floor(Math.random()*8) };
+            if (document.getElementById('temp-casablanca')) document.getElementById('temp-casablanca').innerText = temps.casablanca + '°C';
+            if (document.getElementById('temp-fes')) document.getElementById('temp-fes').innerText = temps.fes + '°C';
+            if (document.getElementById('temp-desert')) document.getElementById('temp-desert').innerText = temps.desert + '°C';
+            if (document.getElementById('temp-marrakech')) document.getElementById('temp-marrakech').innerText = temps.marrakech + '°C';
+        }
+
+        function updateClocks() {
+            const localEl = document.getElementById('local-time');
+            const taiwanEl = document.getElementById('taiwan-time');
+            if (localEl && taiwanEl) {
+                const now = new Date();
+                localEl.innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Africa/Casablanca', hour12: false });
+                taiwanEl.innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Asia/Taipei', hour12: false });
+            }
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>
