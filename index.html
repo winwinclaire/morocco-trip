@@ -32,16 +32,16 @@
         .tab-content.active { display: block; animation: slideUp 0.3s ease-out; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
-        .accordion-item.open .accordion-content { max-height: 8000px; transition: max-height 1.5s ease-in-out; }
+        .accordion-item.open .accordion-content { max-height: 10000px; transition: max-height 1.5s ease-in-out; }
         .accordion-item.open .chevron { transform: rotate(180deg); color: #0064b0; }
         .checked-item span { text-decoration: line-through; color: #cbd5e1; }
         .checked-item i { color: #2563eb; }
     </style>
 </head>
-<body class="max-w-full md:max-w-4xl mx-auto shadow-2xl pb-10 min-h-screen bg-white md:bg-[#f5f0e6] relative">
+<body class="max-w-full md:max-w-4xl mx-auto shadow-2xl pb-10 min-h-screen bg-white md:bg-[#f5f0e6] relative text-left">
 
     <!-- Hero Section -->
-    <header class="relative h-[50vh] md:h-[65vh] flex flex-col justify-center items-center text-center p-6 overflow-hidden">
+    <header class="relative h-[50vh] md:h-[65vh] flex flex-col justify-center items-center text-center p-6 overflow-hidden text-center">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070" class="w-full h-full object-cover" alt="Sahara">
             <div class="absolute inset-0 bg-black/50"></div>
@@ -55,7 +55,7 @@
             <div class="bg-[#c6a664] text-white px-8 py-3 rounded-full text-base md:text-lg font-bold tracking-[4px] mb-8 inline-block shadow-2xl border border-white/20 uppercase">
                 2026.02.07 — 02.17
             </div>
-            <!-- 恢復 Member 資訊 -->
+            <!-- Member 資訊恢復 -->
             <p class="text-xs md:text-base text-white/70 tracking-[6px] uppercase font-bold">Travelers: winwinclaire & madmax</p>
         </div>
     </header>
@@ -74,20 +74,20 @@
         <!-- TAB: FLIGHT & WEATHER -->
         <div id="flt-tab" class="tab-content active space-y-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <section class="bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-gray-100">
+                <section class="bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-gray-100 text-left">
                     <h2 class="flex items-center gap-2 text-[#0064b0] font-black mb-8 border-l-4 border-[#c6a664] pl-4 text-xl md:text-2xl uppercase tracking-wider">航班安排</h2>
                     <div class="space-y-8">
                         <div class="space-y-4">
                             <h3 class="text-sm font-black text-blue-600 uppercase tracking-widest flex items-center gap-2"><i data-lucide="plane" class="rotate-45 w-5"></i> 去程航班 Outbound</h3>
                             <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100">
                                 <p class="text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/07 (六)</p>
-                                <p class="text-base md:text-lg font-bold text-gray-800">台北 (TPE) T2 ➜ 杜拜 (DXB) T3 <br><span class="text-blue-700 font-black">EK367 阿聯酋航空</span></p>
-                                <p class="text-sm text-gray-500 mt-2">23:00 出發 / 04:55 (+1) 抵達</p>
+                                <p class="text-base md:text-lg font-bold text-gray-800 font-black text-blue-800 underline">台北 (TPE) T2 ➜ 杜拜 (DXB) T3</p>
+                                <p class="text-sm text-gray-500 mt-2">EK367 | 23:00 出發 ➜ 04:55 (+1) 抵達</p>
                             </div>
                             <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100">
                                 <p class="text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/08 (日)</p>
-                                <p class="text-base md:text-lg font-bold text-gray-800">杜拜 (DXB) T3 ➜ 卡薩布蘭卡 (CMN) <br><span class="text-blue-700 font-black">EK751 阿聯酋航空</span></p>
-                                <p class="text-sm text-gray-500 mt-2">07:25 出發 / 13:10 抵達</p>
+                                <p class="text-base md:text-lg font-bold text-gray-800 font-black text-blue-800 underline">杜拜 (DXB) T3 ➜ 卡薩布蘭卡 (CMN)</p>
+                                <p class="text-sm text-gray-500 mt-2">EK751 | 07:25 出發 ➜ 13:10 抵達</p>
                             </div>
                         </div>
                         <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-6"></div>
@@ -95,28 +95,28 @@
                             <h3 class="text-sm font-black text-red-600 uppercase tracking-widest flex items-center gap-2"><i data-lucide="plane" class="rotate-[225deg] w-5"></i> 回程航班 Return</h3>
                             <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100">
                                 <p class="text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/16 (一)</p>
-                                <p class="text-base md:text-lg font-bold text-gray-800">卡薩布蘭卡 (CMN) ➜ 杜拜 (DXB) T3 <br><span class="text-blue-700 font-black">EK752 阿聯酋航空</span></p>
-                                <p class="text-sm text-gray-500 mt-2">15:10 出發 / 01:40 (+1) 抵達</p>
+                                <p class="text-base md:text-lg font-bold text-gray-800 font-black text-red-800 underline">卡薩布蘭卡 (CMN) ➜ 杜拜 (DXB) T3</p>
+                                <p class="text-sm text-gray-500 mt-2">EK752 | 15:10 出發 ➜ 01:40 (+1) 抵達</p>
                             </div>
                             <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100">
                                 <p class="text-xs font-bold text-gray-400 mb-1 uppercase tracking-widest">2026/02/17 (二)</p>
-                                <p class="text-base md:text-lg font-bold text-gray-800">杜拜 (DXB) T3 ➜ 台北 (TPE) T2 <br><span class="text-blue-700 font-black">EK366 阿聯酋航空</span></p>
-                                <p class="text-sm text-gray-500 mt-2">03:40 出發 / 15:35 抵達</p>
+                                <p class="text-base md:text-lg font-bold text-gray-800 font-black text-red-800 underline">杜拜 (DXB) T3 ➜ 台北 (TPE) T2</p>
+                                <p class="text-sm text-gray-500 mt-2">EK366 | 03:40 出發 ➜ 15:35 抵達</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 <div class="space-y-8">
-                    <section class="bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-gray-100">
-                        <h2 class="flex items-center gap-2 text-[#0064b0] font-black mb-8 border-l-4 border-[#c6a664] pl-4 text-xl md:text-2xl uppercase tracking-wider">即時氣溫</h2>
+                    <section class="bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-gray-100 text-center">
+                        <h2 class="flex items-center justify-center gap-2 text-[#0064b0] font-black mb-8 border-l-4 border-[#c6a664] pl-4 text-xl md:text-2xl uppercase tracking-wider">即時氣溫</h2>
                         <div class="grid grid-cols-2 gap-4 mb-8">
                             <div class="bg-gray-50 p-4 rounded-[1.5rem] text-center border border-gray-50">
                                 <p class="text-[10px] font-black text-gray-400 uppercase">CASABLANCA</p>
-                                <p id="temp-casablanca" class="text-3xl font-black text-[#c6a664] my-1">16°C</p>
+                                <p id="temp-casablanca" class="text-3xl font-black text-[#c6a664] my-2">16°C</p>
                             </div>
                             <div class="bg-gray-50 p-4 rounded-[1.5rem] text-center border border-gray-50">
                                 <p class="text-[10px] font-black text-gray-400 uppercase">SAHARA</p>
-                                <p id="temp-desert" class="text-3xl font-black text-[#c6a664] my-1">8°C</p>
+                                <p id="temp-desert" class="text-3xl font-black text-[#c6a664] my-2">8°C</p>
                             </div>
                             <div class="bg-gray-50 p-4 rounded-[1.5rem] text-center border border-gray-50">
                                 <p class="text-[10px] font-black text-gray-400 uppercase">FES</p>
@@ -127,20 +127,20 @@
                                 <p id="temp-marrakech" class="text-3xl font-black text-[#c6a664] my-1">19°C</p>
                             </div>
                         </div>
-                        <button onclick="refreshWeather()" class="w-full bg-[#0064b0] text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 text-sm shadow-xl active:scale-95 transition-all uppercase tracking-widest">
+                        <button onclick="refreshWeather()" class="w-full bg-[#0064b0] text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 text-sm shadow-xl active:scale-95 transition-all">
                             <i data-lucide="refresh-cw" class="w-5"></i> 更新即時氣溫
                         </button>
                     </section>
                     <section class="bg-blue-600 rounded-[2rem] p-8 text-white shadow-2xl">
                         <div class="flex flex-col space-y-8">
-                            <div class="flex justify-between items-center">
-                                <div class="flex flex-col text-left">
-                                    <span class="text-xs font-black opacity-70 uppercase tracking-widest">摩洛哥 Local</span>
-                                    <span id="local-time" class="text-3xl font-black tracking-tighter">--:--:--</span>
+                            <div class="flex justify-between items-center text-center">
+                                <div class="flex flex-col flex-1">
+                                    <span class="text-xs font-black opacity-70 uppercase tracking-widest text-left">摩洛哥 Local</span>
+                                    <span id="local-time" class="text-3xl font-black tracking-tighter text-left">--:--:--</span>
                                 </div>
-                                <div class="flex flex-col text-right">
-                                    <span class="text-xs font-black opacity-70 uppercase tracking-widest">台北 Taipei</span>
-                                    <span id="taiwan-time" class="text-3xl font-black tracking-tighter">--:--:--</span>
+                                <div class="flex flex-col flex-1">
+                                    <span class="text-xs font-black opacity-70 uppercase tracking-widest text-right">台北 Taipei</span>
+                                    <span id="taiwan-time" class="text-3xl font-black tracking-tighter text-right">--:--:--</span>
                                 </div>
                             </div>
                         </div>
@@ -149,16 +149,15 @@
             </div>
         </div>
 
-        <!-- TAB: TOUR (景點中英文+PDF完整介紹) -->
+        <!-- TAB: TOUR -->
         <div id="tour-tab" class="tab-content space-y-6">
             <div id="itinerary-list" class="space-y-6"></div>
         </div>
 
         <!-- TAB: MEMO -->
-        <div id="memo-tab" class="tab-content space-y-10 max-w-3xl mx-auto">
-            <!-- 區塊1: 緊急聯絡 -->
+        <div id="memo-tab" class="tab-content space-y-10 max-w-3xl mx-auto text-left">
             <section class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-gray-100">
-                <h3 class="font-black text-red-600 mb-6 flex items-center gap-3 border-b pb-4 uppercase tracking-widest">
+                <h3 class="font-black text-red-600 mb-6 flex items-center gap-3 border-b pb-4 uppercase tracking-widest text-lg">
                     <i data-lucide="phone-call"></i> 緊急聯絡電話
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -173,19 +172,19 @@
                 </div>
             </section>
 
-            <!-- 區塊2: 小費參考 (PDF內容) -->
+            <!-- 小費參考 (位於第二區塊) -->
             <section class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-gray-100">
                 <h3 class="font-black text-[#c6a664] mb-6 flex items-center gap-3 border-b border-gray-100 pb-5 uppercase text-lg tracking-[3px]">
                     <i data-lucide="wallet"></i> 小費參考 (歐元現金)
                 </h3>
                 <div class="bg-yellow-50 p-6 rounded-[2rem] border border-yellow-100 mb-6 text-center text-sm md:text-base">
-                    <p class="text-red-700 font-black mb-2 uppercase tracking-widest">建議支付標準：</p>
-                    <p class="text-lg md:text-xl text-gray-700 font-bold leading-snug">導遊/司機/領隊：每日 <span class="text-red-600 font-black">12€</span><br>11 天全程共計 <span class="underline font-black text-2xl text-red-600 mx-1">132€</span>。</p>
+                    <p class="text-red-700 font-black mb-2 uppercase tracking-widest text-center">建議支付標準：</p>
+                    <p class="text-lg md:text-xl text-gray-700 font-bold leading-snug text-center">導遊/司機/領隊：每日 <span class="text-red-600 font-black">12€</span><br>11 天全程共計 <span class="underline font-black text-2xl text-red-600 mx-1">132€</span>。</p>
                 </div>
                 <ul id="tips-list" class="grid grid-cols-1 gap-4 font-bold text-gray-700 text-base"></ul>
             </section>
 
-            <!-- 區塊3: 注意事項 -->
+            <!-- 注意事項 -->
             <section class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-gray-100">
                 <h3 class="font-black text-blue-700 mb-8 flex items-center gap-3 border-b border-gray-100 pb-5 uppercase text-lg tracking-[3px]">
                     <i data-lucide="alert-triangle" class="text-orange-500"></i> 注意事項
@@ -193,44 +192,44 @@
                 <ul id="memo-items" class="space-y-6 text-base leading-relaxed font-medium text-gray-600"></ul>
             </section>
 
-            <!-- 區塊4: 衣服物品清單 (最後一個區塊) -->
+            <!-- 衣服物品清單 (最後一個區塊) -->
             <section class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-gray-100">
-                <h3 class="font-black text-blue-700 mb-6 flex items-center gap-3 border-b pb-4 uppercase tracking-widest">
+                <h3 class="font-black text-blue-700 mb-6 flex items-center gap-3 border-b pb-4 uppercase tracking-widest text-lg">
                     <i data-lucide="briefcase"></i> 衣服物品清單
                 </h3>
                 <div id="packing-checklist" class="grid grid-cols-1 gap-0.5"></div>
             </section>
         </div>
 
-        <!-- TAB: MUST (淺色背景) -->
+        <!-- TAB: MUST -->
         <div id="must-tab" class="tab-content max-w-5xl mx-auto space-y-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-red-50 rounded-[2.5rem] p-8 shadow-sm border border-red-100 text-red-900">
+                <div class="bg-red-50 rounded-[2.5rem] p-8 shadow-sm border border-red-100 text-red-900 text-left">
                     <h3 class="font-black mb-6 flex items-center gap-3 text-xl border-b border-red-200 pb-4"><i data-lucide="camera"></i> 經典必訪</h3>
-                    <ul class="space-y-1 text-base font-bold" id="must-spots"></ul>
+                    <ul class="space-y-1 text-base font-bold text-left" id="must-spots"></ul>
                 </div>
-                <div class="bg-orange-50 rounded-[2.5rem] p-8 shadow-sm border border-orange-100 text-orange-900">
+                <div class="bg-orange-50 rounded-[2.5rem] p-8 shadow-sm border border-orange-100 text-orange-900 text-left">
                     <h3 class="font-black mb-6 flex items-center gap-3 text-xl border-b border-orange-200 pb-4"><i data-lucide="coffee"></i> 必吃美食</h3>
-                    <ul class="space-y-1 text-base font-bold" id="must-food"></ul>
+                    <ul class="space-y-1 text-base font-bold text-left" id="must-food"></ul>
                 </div>
-                <div class="bg-emerald-50 rounded-[2.5rem] p-8 shadow-sm border border-emerald-100 text-emerald-900">
+                <div class="bg-emerald-50 rounded-[2.5rem] p-8 shadow-sm border border-emerald-100 text-emerald-900 text-left">
                     <h3 class="font-black mb-6 flex items-center gap-3 text-xl border-b border-emerald-200 pb-4"><i data-lucide="gem"></i> 必買商品</h3>
-                    <ul class="space-y-1 text-base font-bold" id="must-buy"></ul>
+                    <ul class="space-y-1 text-base font-bold text-left" id="must-buy"></ul>
                 </div>
-                <div class="bg-blue-50 rounded-[2.5rem] p-8 shadow-sm border border-blue-100 text-blue-900">
+                <div class="bg-blue-50 rounded-[2.5rem] p-8 shadow-sm border border-blue-100 text-blue-900 text-left">
                     <h3 class="font-black mb-6 flex items-center gap-3 text-xl border-b border-blue-200 pb-4"><i data-lucide="store"></i> 必逛市場</h3>
-                    <ul class="space-y-1 text-base font-bold" id="must-market"></ul>
+                    <ul class="space-y-1 text-base font-bold text-left" id="must-market"></ul>
                 </div>
             </div>
         </div>
 
         <!-- TAB: BUDGET -->
-        <div id="budget-tab" class="tab-content max-w-3xl mx-auto space-y-8">
-            <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-gray-100">
+        <div id="budget-tab" class="tab-content max-w-3xl mx-auto space-y-8 text-left">
+            <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-gray-100 text-left">
                 <h2 class="text-2xl font-black mb-8 text-gray-800 border-b pb-5 uppercase">支出紀錄與統計分析</h2>
                 <div class="space-y-7">
-                    <div class="grid grid-cols-2 gap-4">
-                        <select id="exp-category" class="p-4 bg-gray-50 rounded-2xl font-bold outline-none ring-1 ring-gray-200">
+                    <div class="grid grid-cols-2 gap-4 text-left">
+                        <select id="exp-category" class="p-4 bg-gray-50 rounded-2xl font-bold outline-none ring-1 ring-gray-200 text-left text-left">
                             <option value="團費">團費</option>
                             <option value="餐食">餐食</option>
                             <option value="交通">交通</option>
@@ -239,34 +238,29 @@
                             <option value="門票">門票</option>
                             <option value="其他">其他</option>
                         </select>
-                        <select id="exp-currency" class="p-4 bg-gray-50 rounded-2xl font-bold outline-none ring-1 ring-gray-200">
-                            <option value="MAD">MAD</option><option value="EUR">EUR</option><option value="TWD">TWD</option>
+                        <select id="exp-currency" class="p-4 bg-gray-50 rounded-2xl font-bold outline-none ring-1 ring-gray-200 text-left text-left">
+                            <option value="TWD">TWD</option><option value="EUR">EUR</option><option value="MAD">MAD</option>
                         </select>
                     </div>
-                    <input id="exp-content" type="text" placeholder="描述內容 (如: 椰棗/皮拖鞋)" class="w-full p-4 bg-gray-50 rounded-2xl font-bold ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500">
+                    <input id="exp-content" type="text" placeholder="內容描述 (如: 椰棗/皮拖鞋)" class="w-full p-4 bg-gray-50 rounded-2xl font-bold ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500">
                     <div class="flex gap-4">
-                        <input id="exp-amount" type="number" placeholder="金額" class="flex-1 p-4 bg-gray-50 rounded-2xl font-bold ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500">
-                        <button onclick="addExpense()" class="p-4 bg-blue-600 text-white rounded-2xl shadow-lg active:scale-95 transition-all"><i data-lucide="plus" class="w-8 h-8"></i></button>
+                        <input id="exp-amount" type="number" placeholder="金額" class="flex-1 p-4 bg-gray-50 rounded-2xl font-bold ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500 text-left text-left">
+                        <button onclick="addExpense()" class="p-4 bg-blue-600 text-white rounded-2xl shadow-lg active:scale-95 transition-all text-center"><i data-lucide="plus"></i></button>
                     </div>
                 </div>
             </section>
 
             <div id="budget-summary-area" class="space-y-6" style="display: none;">
-                <!-- 統計分析圖 -->
-                <section class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-50">
-                    <h3 class="text-xs font-black text-gray-400 uppercase mb-6 tracking-widest">支出類別佔比分析圖 Chart</h3>
-                    <div id="budget-stats" class="space-y-5"></div>
+                <section class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-50 text-left text-left">
+                    <h3 class="text-xs font-black text-gray-400 uppercase mb-6 tracking-widest">支出類別佔比分析 Chart</h3>
+                    <div id="budget-stats" class="space-y-5 text-left"></div>
                 </section>
-                
-                <!-- 明細列表 -->
-                <div id="budget-items-list" class="space-y-4"></div>
-                
-                <!-- 加總計算卡片 -->
+                <div id="budget-items-list" class="space-y-4 text-left"></div>
                 <div class="bg-blue-600 rounded-[3.5rem] p-10 text-center text-white shadow-2xl">
                     <p class="text-xs font-black opacity-80 uppercase tracking-widest mb-2">預估支出加總總計 (TWD)</p>
-                    <div class="text-6xl font-black tracking-tighter" id="budget-total-twd">0</div>
-                    <div class="mt-4 pt-6 border-t border-white/20">
-                        <p class="text-sm font-black opacity-80 uppercase tracking-widest">約折合 <span id="budget-total-mad" class="text-xl mx-1 underline font-black">0</span> MAD</p>
+                    <div class="text-6xl font-black tracking-tighter text-center" id="budget-total-twd">0</div>
+                    <div class="mt-4 pt-6 border-t border-white/20 text-center">
+                        <p class="text-sm font-black opacity-80 uppercase tracking-widest text-center">約折合 <span id="budget-total-mad" class="text-xl mx-1 underline font-black text-center text-center">0</span> MAD</p>
                     </div>
                 </div>
             </div>
@@ -275,59 +269,110 @@
     </main>
 
     <script>
-        // 行程資料 (中英景點名稱+PDF完整描述+Maps連結)
+        // 行程資料 (含 中英景點名稱、PDF 完整描述與 Google Maps 連結)
         const itinerary = [
-            { day: 1, date: '2/07 (六)', title: '台北 ✈ 杜拜 Taipei to Dubai', desc: '今日集合於桃園機場 T2 23號櫃台，搭乘豪華客機前往杜拜轉機。行囊中裝滿無限的憧憬，踏上神祕北非之旅。', meals: '早:自理 / 午:自理 / 晚:機上', stay: '夜宿機上' },
-            { day: 2, date: '2/08 (日)', title: '杜拜 ➜ 卡薩布蘭卡 ➜ 拉巴特 Dubai to Rabat', spots: [
-                {n:'拉巴特王宮 Rabat Royal Palace',d:'始建於1785年，占地2平方公里，典型的阿拉伯宮殿建築。王宮大道寬廣筆直，廣場四周有古炮，中央有大噴水池，是國王接待世界各國元首重地。',url:'https://www.google.com/maps/search/?api=1&query=Rabat+Royal+Palace'},
-                {n:'哈桑塔 Hassan Tower',d:'建於1195年，以玫瑰色石塊建造。原欲建造伊斯蘭最大清真寺讓軍隊禱告，無奈地震中斷，留下百根殘柱，展現阿拉伯穆斯林優美工藝。',url:'https://www.google.com/maps/search/?api=1&query=Hassan+Tower'},
-                {n:'穆罕默德五世陵寢 Mausoleum of Mohammed V',d:'融合羅馬、拜占庭、伊斯蘭風格。走進大殿可見英雄領袖穆罕默德五世的大理石棺，仰望則有如繁星般的彩繪琉璃圓拱天花。',url:'https://www.google.com/maps/search/?api=1&query=Mausoleum+of+Mohammed+V'},
-                {n:'烏達亞城堡 Kasbah of the Udayas',d:'始建於12世紀，保留柏柏爾民居街道。院內花園為伊斯梅爾國王於17世紀所建，具安達魯西亞風格花園與高空平台遺蹟。',url:'https://www.google.com/maps/search/?api=1&query=Kasbah+of+the+Udayas'}
-            ], meals: '早:機上 / 午:機上 / 晚:飯店內用', stay: 'Dawliz Rabat Art & Spa', stayUrl:'https://www.google.com/maps/search/?api=1&query=Dawliz+Rabat+Art+%26+Spa' },
-            { day: 3, date: '2/09 (一)', title: '拉巴特 ➜ 瓦盧比利斯 ➜ 契夫蕭安 Rabat to Chefchaouen', spots: [
-                {n:'瓦盧比利斯 Volubilis (UNESCO)',d:'西元前三世紀羅馬古蹟，摩洛哥保存最完整者。街道、浴場、市場仍保存完整，其中以俄耳甫斯、艾弗伯斯等房舍馬賽克拼畫最具看點。',url:'https://www.google.com/maps/search/?api=1&query=Volubilis'},
-                {n:'契夫蕭安 (藍色山城) Chefchaouen (The Blue City)',d:'遺世獨立5個世紀。整座老城漆成深淺藍色。街道巷弄隨地勢起伏，房屋漆成藍白相間地中海顏色，清新潔淨。老城紡織工坊披肩、帽、毯子最知名。',url:'https://www.google.com/maps/search/?api=1&query=Chefchaouen+Medina'}
-            ], meals: '早:飯店 / 午:串燒料理+羊乳酪沙拉 / 晚:飯店內用', stay: 'Hotel Ziryab', stayUrl:'https://www.google.com/maps/search/?api=1&query=Hotel+Ziryab' },
-            { day: 4, date: '2/10 (二)', title: '契夫蕭安 ➜ 菲斯古城 Chefchaouen to Fes', spots: [
-                {n:'菲斯舊城區 Medina of Fes',d:'擁有2800年歷史，全世界最大徒步區，擁有9000條巷弄迷宮。北非史上第一個回教城市，被評為全球最浪漫城市之一，是一座活生生的博物館。',url:'https://www.google.com/maps/search/?api=1&query=Fes+Medina'},
-                {n:'皮革染料場 Chouara Tannery',d:'從16世紀維持古法人工染皮。高品質皮革關鍵在於工人跳進大染缸「按摩」皮革，使其柔軟上色，是菲斯不褪色的傳統關鍵。',url:'https://www.google.com/maps/search/?api=1&query=Chouara+Tannery'},
-                {n:'菲斯皇宮 Royal Palace of Fes',d:'象徵「七個大門、七個幸福」。大門精緻的青銅工藝與馬賽克裝飾展現摩洛哥最高工藝水準。目前仍為國王使用中。',url:'https://www.google.com/maps/search/?api=1&query=Royal+Palace+of+Fes'}
-            ], meals: '早:飯店 / 午:庫斯庫斯料理+巴司蒂亞派 / 晚:飯店內用', stay: 'Les Merinides', stayUrl:'https://www.google.com/maps/search/?api=1&query=Les+Merinides' },
-            { day: 5, date: '2/11 (三)', title: '菲斯 ➜ 伊夫蘭 ➜ 撒哈拉 Fes to Sahara', spots: [
-                {n:'伊夫蘭 Ifrane (小瑞士)',d:'海拔1650公尺著名滑雪勝地。紅瓦斜屋頂建築與花園咖啡店林立，充滿歐洲度假氛圍，漫步其中非常自在。',url:'https://www.google.com/maps/search/?api=1&query=Ifrane'},
-                {n:'梅如卡 (撒哈拉沙漠) Merzouga (Sahara Desert)',d:'最美雪碧砂丘入口。高達百公尺沙丘綿延不絕。搭乘 4WD 進入並騎駱駝欣賞落日與星空，是人生難忘的美好經歷。',url:'https://www.google.com/maps/search/?api=1&query=Merzouga'}
-            ], meals: '早:飯店 / 午:驛站鱒魚料理 / 晚:豪華營地晚宴', stay: 'Sahara Stars Camp', stayUrl:'https://www.google.com/maps/search/?api=1&query=Sahara+Stars+Camp' },
-            { day: 6, date: '2/12 (四)', title: '梅如卡 ➜ 陶德拉 ➜ 瓦薩薩特 Sahara to Ouarzazate', spots: [
-                {n:'陶德拉峽谷 Todra Gorge',d:'垂直山壁高達300公尺，清澈溪水貫穿壯麗峽谷。水量稀少時可步行感受峽谷震撼。被譽為摩洛哥大峽谷。',url:'https://www.google.com/maps/search/?api=1&query=Todra+Gorge'},
-                {n:'千堡之路 Road of the 1000 Kasbahs',d:'穿越山谷，沿途散布無數柏柏爾泥磚堡壘 (Kasbah)，每一座都見證了沙漠文明的輝煌。',url:'https://www.google.com/maps/search/?api=1&query=Road+of+the+1000+Kasbahs'},
-                {n:'陶里爾特城堡 Kasbah Taourirt',d:'1920年馬拉喀什總督所建行政中心。展現精美木刻與泥塑工藝。曾獲蘇丹贈與大片領地與一門 77 毫米大砲。',url:'https://www.google.com/maps/search/?api=1&query=Kasbah+Taourirt'}
-            ], meals: '早:營地 / 午:塔吉鍋牛肉料理 / 晚:飯店內用', stay: 'Karam Palace Resort', stayUrl:'https://www.google.com/maps/search/?api=1&query=Karam+Palace' },
-            { day: 7, date: '2/13 (五)', title: '瓦薩薩特 ➜ 艾本哈杜 ➜ 馬拉喀什 Ouarzazate to Marrakech', spots: [
-                {n:'艾本哈杜 Ksar of Ait Benhaddou (UNESCO)',d:'最美土堡古城，教科文組織指定遺址。20多部電影如《神鬼戰士》、《盜墓迷城》、《權力遊戲》在此取景尋景。',url:'https://www.google.com/maps/search/?api=1&query=Ait+Ben+Haddou'},
-                {n:'馬拉喀什 Marrakech (城市介紹)',d:'語意為「上帝的故鄉」。1070年建城，坐落阿特拉斯山腳下，曾貴為皇城。摩洛哥第二大城，以赭紅色黏土建築聞名。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Medina'},
-                {n:'德吉瑪廣場 Jemaa el-Fnaa',d:'不眠廣場，聚集跑江湖賣藝人、弄蛇人、吞火人。黃昏後變身最大露天劇場與各種風味小吃聚集地。',url:'https://www.google.com/maps/search/?api=1&query=Jemaa+el-Fnaa'}
-            ], meals: '早:飯店 / 午:烤肉料理+蒸蛋 / 晚:飯店內用', stay: 'Adam Park Marrakech', stayUrl:'https://www.google.com/maps/search/?api=1&query=Adam+Park+Marrakech' },
-            { day: 8, date: '2/14 (六)', title: '馬拉喀什全日遊 Marrakech Full Day', spots: [
-                {n:'馬車遊舊城區 Horse Carriage Tour',d:'城內多建築以赭紅色岩石砌成。搭乘馬車穿梭粉紅色黏土樓房間，感受紅色之城復古生活步調。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Horse+Carriage'},
-                {n:'聖羅蘭花園 Jardin Majorelle',d:'由 Majorelle 設計。經典「Majorelle blue」藍漆裝飾色彩活躍。聖羅蘭買下後成為其傳奇別墅。',url:'https://www.google.com/maps/search/?api=1&query=Jardin+Majorelle'},
-                {n:'巴西亞皇宮 Bahia Palace',d:'16世紀保存完好的皇宮。融合本土與回教特色的上流宅第範本。有華麗裝飾、噴泉與花園。',url:'https://www.google.com/maps/search/?api=1&query=Bahia+Palace'},
-                {n:'露天市場 Souks',d:'全摩洛哥最大市集迷宮。工匠製造優良皮革、木雕、金屬製品、香料。尋寶靈魂處。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Souks'},
-                {n:'庫圖比亞清真寺 Koutoubia Mosque (自遊)',d:'建於12世紀。70公尺宣禮塔是紅色之城地標。展現精湛穆斯林工藝，城市何處皆可望見塔尖。',url:'https://www.google.com/maps/search/?api=1&query=Koutoubia+Mosque'},
-                {n:'班約瑟夫神學院 Ben Youssef Madrasa (自遊)',d:'北非最大古神學院遺址。瓷磚拼接、杉木與灰泥雕刻工藝極致。展現裝飾藝術美學。',url:'https://www.google.com/maps/search/?api=1&query=Ben+Youssef+Madrasa'}
-            ], meals: '早:飯店 / 午:綜合燒烤 / 晚:自理', stay: 'Adam Park Marrakech (連泊)', stayUrl:'https://www.google.com/maps/search/?api=1&query=Adam+Park+Marrakech' },
-            { day: 9, date: '2/15 (日)', title: '馬拉喀什 ➜ 卡薩布蘭卡 Marrakech to Casablanca', spots: [
-                {n:'卡薩布蘭卡 Casablanca (介紹)',d:'大西洋海港城市。西班牙人稱「白房子」。1942年電影《北非諜影》使其聞名，保留白色法式優雅氣息。',url:'https://www.google.com/maps/search/?api=1&query=Casablanca+Morocco'},
-                {n:'瑞克咖啡廳 Rick\'s CAFE',d:'美國商務人員重現電影鋼琴酒吧。店內仿造電影擺設，是浪漫情懷化身。註：晚餐需著正式休閒裝。',url:'https://www.google.com/maps/search/?api=1&query=Rick%27s+Cafe+Casablanca'},
-                {n:'濱海大道 The Corniche',d:'卡薩海岸長廊。餐廳長廊林立設計具藝術味，點綴連綿花圃，享受大西洋海風。',url:'https://www.google.com/maps/search/?api=1&query=The+Corniche+Casablanca'},
-                {n:'穆罕默德五世廣場 Place Mohammed V',d:'鴿子廣場。周圍聚集高等法院、市政廳等摩爾式建築。居民漫步與餵鴿的愜意場所。',url:'https://www.google.com/maps/search/?api=1&query=Place+Mohammed+V'},
-                {n:'麥地那舊城區 Old Medina Quarter',d:'泥沙建築分三層：底層馬廠、二層糧倉、三層住宅。被圍牆圈起具備濃厚在地風情。',url:'https://www.google.com/maps/search/?api=1&query=Old+Medina+Casablanca'}
-            ], meals: '早:飯店 / 午:瑞克咖啡廳(三道式) / 晚:西班牙風味料理', stay: 'Movenpick Hotel Casablanca', stayUrl:'https://www.google.com/maps/search/?api=1&query=Movenpick+Casablanca' },
-            { day: 10, date: '2/16 (一)', title: '卡薩布蘭卡 ➜ 機場 Casablanca to Airport', spots: [
-                {n:'哈桑二世清真寺 Hassan II Mosque',d:'摩洛哥最大、世界第三。三分之一建於海上，體現「真主寶座立於水上」經文。具滾動式屋頂、自動發熱地板。',url:'https://www.google.com/maps/search/?api=1&query=Hassan+II+Mosque'}
-            ], meals: '早:飯店 / 午:自理 / 晚:機上', stay: '夜宿機上' }
+            { 
+                day: 1, date: '2/07 (六)', title: '台北 ✈ 杜拜 Taipei to Dubai', 
+                flightInfo: '台北 (TPE) 23:00 ➜ 杜拜 (DXB) 04:55 (+1)',
+                desc: '今日準備好行李及輕鬆愉快的心情。晚間 20:00 於桃園機場 T2 23號櫃台集合，搭乘豪華客機前往杜拜。行囊中裝滿無限憧憬，踏上神祕北非之旅。', 
+                meals: {b:'自理', l:'自理', d:'機上'}, stay: '夜宿機上' 
+            },
+            { 
+                day: 2, date: '2/08 (日)', title: '杜拜 ➜ 卡薩布蘭卡 ➜ 拉巴特 Dubai to Rabat', 
+                flightInfo: '杜拜 (DXB) 07:25 ➜ 卡薩 (CMN) 13:10',
+                spots: [
+                    {n:'拉巴特王宮 Rabat Royal Palace',d:'始建於1785年，占地2平方公里，是典型的阿拉伯宮殿建築。大道寬廣筆直，廣場四周有古炮，中央有大噴水池，是國王接待世界各國元首的重地。',url:'https://www.google.com/maps/search/?api=1&query=Rabat+Royal+Palace'},
+                    {n:'哈桑塔 Hassan Tower',d:'建於1195年，以美麗玫瑰色石塊建造。原欲建造伊斯蘭最大清真寺讓軍隊禱告，無奈地震中斷，留下百根殘柱，展現阿拉伯穆斯林優美工藝。',url:'https://www.google.com/maps/search/?api=1&query=Hassan+Tower'},
+                    {n:'穆罕默德五世陵寢 Mausoleum of Mohammed V',d:'英雄領袖穆罕默德五世陵寢。融合羅馬、拜占庭、伊斯蘭風格，殿內可見其大理石棺，仰望則有繁星般的彩繪琉璃圓拱天花。',url:'https://www.google.com/maps/search/?api=1&query=Mausoleum+of+Mohammed+V'},
+                    {n:'烏達亞城堡 Kasbah of the Udayas',d:'始建於12世紀，保留柏柏爾民居街道。院內花園為伊斯梅爾國王於17世紀所建，具安達魯西亞風格。',url:'https://www.google.com/maps/search/?api=1&query=Kasbah+of+the+Udayas'}
+                ], 
+                meals: {b:'機上', l:'機上', d:'飯店內用'}, stay: 'Dawliz Rabat Art & Spa', stayUrl:'https://www.google.com/maps/search/?api=1&query=Dawliz+Rabat+Art+%26+Spa'
+            },
+            { 
+                day: 3, date: '2/09 (一)', title: '拉巴特 ➜ 瓦盧比利斯 ➜ 契夫蕭安 Rabat to Chefchaouen', 
+                spots: [
+                    {n:'瓦盧比利斯 Volubilis (UNESCO)',d:'西元前三世紀羅馬古蹟，摩洛哥保存最完整者。街道、浴場、市場保存完整，其中俄耳甫斯、艾弗伯斯等房舍馬賽克拼畫最具看點。',url:'https://www.google.com/maps/search/?api=1&query=Volubilis'},
+                    {n:'契夫蕭安 (藍色山城) Chefchaouen (The Blue City)',d:'遺世獨立5個世紀。整座老城漆成深淺藍色。街道隨地勢起伏，房屋漆成藍白相間地中海顏色。老城紡織工坊披肩、毯子最知名。',url:'https://www.google.com/maps/search/?api=1&query=Chefchaouen+Medina'}
+                ], 
+                meals: {b:'飯店', l:'摩式串燒料理+羊乳酪沙拉', d:'飯店內用'}, stay: 'Hotel Ziryab', stayUrl:'https://www.google.com/maps/search/?api=1&query=Hotel+Ziryab'
+            },
+            { 
+                day: 4, date: '2/10 (二)', title: '契夫蕭安 ➜ 菲斯古城 Chefchaouen to Fes', 
+                spots: [
+                    {n:'菲斯舊城區 Medina of Fes',d:'擁有2800年歷史，全世界最大徒步區，擁有9000條巷弄迷宮。北非史上第一個回教城市，被評為全球最浪漫城市之一，是一座活生生的博物館。',url:'https://www.google.com/maps/search/?api=1&query=Fes+Medina'},
+                    {n:'皮革染料場 Chouara Tannery',d:'維持16世紀古法染皮。高品質皮革關鍵在於工人跳進大染缸「按摩」皮革，使其柔軟上色，是菲斯不褪色的關鍵。',url:'https://www.google.com/maps/search/?api=1&query=Chouara+Tannery'},
+                    {n:'菲斯皇宮 Royal Palace of Fes',d:'象徵「七個大門、七個幸福」。大門精緻的青銅工藝與馬賽克裝飾展現最高工藝水準。目前仍為國王使用。',url:'https://www.google.com/maps/search/?api=1&query=Royal+Palace+of+Fes'}
+                ], 
+                meals: {b:'飯店', l:'菲斯庫斯庫斯料理+巴司蒂亞派', d:'飯店內用'}, stay: 'Les Merinides', stayUrl:'https://www.google.com/maps/search/?api=1&query=Les+Merinides'
+            },
+            { 
+                day: 5, date: '2/11 (三)', title: '菲斯 ➜ 伊夫蘭 ➜ 撒哈拉 Fes to Sahara', 
+                spots: [
+                    {n:'伊夫蘭 Ifrane (小瑞士)',d:'海拔1650公尺著名滑雪勝地。紅瓦斜屋頂建築與花園咖啡店林立，充滿歐洲氛圍，漫步其中非常自在。',url:'https://www.google.com/maps/search/?api=1&query=Ifrane'},
+                    {n:'伊爾富德 Erfoud (化石之鄉)',d:'撒哈拉門戶，這裡是著名的化石之鄉。獨特的地質景觀與荒蕪感，使其常被選為《波斯王子》、《木乃伊》等好萊塢電影拍攝地。',url:'https://www.google.com/maps/search/?api=1&query=Erfoud+Morocco'},
+                    {n:'梅如卡 (撒哈拉沙漠) Merzouga (Sahara Desert)',d:'最美雪碧砂丘入口。高達百公尺沙丘綿延不絕。搭乘 4WD 進入並騎駱駝欣賞落日與星空，是人生難忘的美好經歷。',url:'https://www.google.com/maps/search/?api=1&query=Merzouga'}
+                ], 
+                meals: {b:'飯店', l:'驛站鱒魚料理+特色甜點', d:'豪華營地晚宴'}, stay: 'Sahara Stars Camp', stayUrl:'https://www.google.com/maps/search/?api=1&query=Sahara+Stars+Camp'
+            },
+            { 
+                day: 6, date: '2/12 (四)', title: '梅如卡 ➜ 陶德拉 ➜ 瓦薩薩特 Sahara to Ouarzazate', 
+                spots: [
+                    {n:'陶德拉峽谷 Todra Gorge',d:'垂直山壁高達300公尺，清澈溪水與城寨綠洲構築成風景。水量少時可步行感受峽谷震撼。',url:'https://www.google.com/maps/search/?api=1&query=Todra+Gorge'},
+                    {n:'千堡之路 Road of the 1000 Kasbahs',d:'穿越山谷，沿途散布無數柏柏爾泥磚堡壘 (Kasbah)，見證沙漠文明的輝煌。',url:'https://www.google.com/maps/search/?api=1&query=Road+of+the+1000+Kasbahs'},
+                    {n:'陶里爾特城堡 Kasbah Taourirt',d:'1920年馬拉喀什總督所建行政中心。展現精美木刻與泥塑工藝。曾獲蘇丹贈與大片領地。',url:'https://www.google.com/maps/search/?api=1&query=Kasbah+Taourirt'}
+                ], 
+                meals: {b:'營地', l:'塔吉鍋牛肉料理+三角酥餅', d:'飯店內用'}, stay: 'Karam Palace Resort', stayUrl:'https://www.google.com/maps/search/?api=1&query=Karam+Palace'
+            },
+            { 
+                day: 7, date: '2/13 (五)', title: '瓦薩薩特 ➜ 艾本哈杜 ➜ 馬拉喀什 Ouarzazate to Marrakech', 
+                spots: [
+                    {n:'艾本哈杜 Ksar of Ait Benhaddou (UNESCO)',d:'最美土堡古城，教科文指定遺址。20多部電影如《神鬼戰士》、《盜墓迷城》都在此取景。',url:'https://www.google.com/maps/search/?api=1&query=Ait+Ben+Haddou'},
+                    {n:'阿特拉斯製片場 Atlas Film Studio',d:'世界最大片場之一。入口矗立高聳法老雕像。內部完整保留了古埃及、羅馬等歷史電影場景，具滄桑感。',url:'https://www.google.com/maps/search/?api=1&query=Atlas+Film+Studio'},
+                    {n:'馬拉喀什 Marrakech (城市介紹)',d:'「上帝的故鄉」。1070年建城，坐落阿特拉斯山腳，曾貴為皇城。摩洛哥第二大城，以赭紅色建築聞名。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Medina'},
+                    {n:'德吉瑪廣場 Jemaa el-Fnaa',d:'聚集跑江湖賣藝人、弄蛇人。黃昏後變身最大露天劇場與各種風味小吃，是城市靈魂所在。',url:'https://www.google.com/maps/search/?api=1&query=Jemaa+el-Fnaa'}
+                ], 
+                meals: {b:'飯店', l:'柏柏爾烤肉料理+精緻蒸蛋', d:'飯店內用'}, stay: 'Adam Park Marrakech', stayUrl:'https://www.google.com/maps/search/?api=1&query=Adam+Park+Marrakech'
+            },
+            { 
+                day: 8, date: '2/14 (六)', title: '馬拉喀什全日遊 Marrakech Full Day', 
+                spots: [
+                    {n:'馬車遊舊城區 Horse Carriage Tour',d:'搭乘馬車穿梭粉紅色黏土樓房間，感受紅色之城復古生活步調。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Horse+Carriage'},
+                    {n:'聖羅蘭花園 Jardin Majorelle',d:'由 Majorelle 設計。經典「Majorelle blue」藍漆裝飾。聖羅蘭買下後成為其靈感別墅。',url:'https://www.google.com/maps/search/?api=1&query=Jardin+Majorelle'},
+                    {n:'巴西亞皇宮 Bahia Palace',d:'16世紀保存完好。融合回教特色宅第範本。有華麗裝飾與噴泉花園。',url:'https://www.google.com/maps/search/?api=1&query=Bahia+Palace'},
+                    {n:'露天市場 Souks',d:'全摩洛哥最大市集迷宮。尋寶皮革、毯子、香料與金屬藝品，是在地生活核心。',url:'https://www.google.com/maps/search/?api=1&query=Marrakech+Souks'},
+                    {n:'庫圖比亞清真寺 Koutoubia Mosque (自遊)',d:'建於12世紀。70公尺宣禮塔是紅色之城地標。展現精湛穆斯林工藝。',url:'https://www.google.com/maps/search/?api=1&query=Koutoubia+Mosque'},
+                    {n:'班約瑟夫神學院 Ben Youssef Madrasa (自遊)',d:'北非最大古神學院。瓷磚拼接、杉木與灰泥雕刻工藝極致。展現安達魯西亞式美學。',url:'https://www.google.com/maps/search/?api=1&query=Ben+Youssef+Madrasa'}
+                ], 
+                meals: {b:'飯店', l:'摩式綜合燒烤', d:'不眠廣場自理'}, stay: 'Adam Park Marrakech (連泊)', stayUrl:'https://www.google.com/maps/search/?api=1&query=Adam+Park+Marrakech'
+            },
+            { 
+                day: 9, date: '2/15 (日)', title: '馬拉喀什 ➜ 卡薩布蘭卡 Marrakech to Casablanca', 
+                spots: [
+                    {n:'卡薩布蘭卡 Casablanca (介紹)',d:'大西洋海港城市。西班牙人稱「白房子」。1942年電影《北非諜影》聞名，保留白色法式優雅氣息。',url:'https://www.google.com/maps/search/?api=1&query=Casablanca+Morocco'},
+                    {n:'瑞克咖啡廳 Rick\'s CAFE',d:'美國商務人員重現電影鋼琴酒吧。店內仿造電影擺設，是浪漫情懷化身。註：晚餐需著正式休閒裝。',url:'https://www.google.com/maps/search/?api=1&query=Rick%27s+Cafe+Casablanca'},
+                    {n:'濱海大道 The Corniche',d:'海岸長廊。餐廳林立設計具藝術味，點綴連綿花圃，享受大西洋海風。',url:'https://www.google.com/maps/search/?api=1&query=The+Corniche+Casablanca'},
+                    {n:'穆罕默德五世廣場 Place Mohammed V',d:'鴿子廣場。周圍聚集高等法院等傳統摩爾式建築。居民漫步與餵鴿處。',url:'https://www.google.com/maps/search/?api=1&query=Place+Mohammed+V'},
+                    {n:'麥地那舊城區 Old Medina Quarter',d:'泥沙建築分三層。被圍牆圈起具備濃厚在地風情。',url:'https://www.google.com/maps/search/?api=1&query=Old+Medina+Casablanca'}
+                ], 
+                meals: {b:'飯店', l:'瑞克咖啡廳(三道式)', d:'西班牙風味料理'}, stay: 'Movenpick Hotel Casablanca', stayUrl:'https://www.google.com/maps/search/?api=1&query=Movenpick+Casablanca'
+            },
+            { 
+                day: 10, date: '2/16 (一)', title: '卡薩布蘭卡 ➜ 杜拜 Casablanca to Dubai', 
+                flightInfo: '卡薩 (CMN) 15:10 ➜ 杜拜 (DXB) 01:40 (+1)',
+                spots: [
+                    {n:'哈桑二世清真寺 Hassan II Mosque',d:'摩洛哥最大。三分之一建於海上。具備可在5分鐘內開啟的滾動式屋頂、自動發熱地板。',url:'https://www.google.com/maps/search/?api=1&query=Hassan+II+Mosque'}
+                ], 
+                meals: {b:'飯店', l:'自理(方便遊玩)', d:'機上'}, stay: '夜宿機上'
+            },
+            { 
+                day: 11, date: '2/17 (二)', title: '平安返台 Return to Taipei', 
+                flightInfo: '杜拜 (DXB) 03:40 ➜ 台北 (TPE) 15:35',
+                desc: '下午 15:35 抵達桃園國際機場，帶著滿滿的回憶返家，結束這場難忘之旅。', 
+                meals: {b:'機上', l:'家中', d:'自理'}
+            }
         ];
 
-        let expenses = JSON.parse(localStorage.getItem('mor_trip_budget_final_v40')) || [];
+        let expenses = JSON.parse(localStorage.getItem('mor_trip_budget_final_v500')) || [];
 
         function init() {
             renderItinerary();
@@ -354,8 +399,15 @@
                     </div>
                 `).join('') : `<p class="text-base text-gray-600 px-2 leading-relaxed">${d.desc}</p>`;
                 
+                // 航班紅條區塊 (D1, D2, D10, D11)
+                let flightBarHTML = (d.day===1 || d.day===2 || d.day===10 || d.day===11) ? 
+                    `<div class="bg-red-600 text-white p-4 rounded-2xl font-bold mb-6 flex items-center gap-3 shadow-lg">
+                        <i data-lucide="plane" class="w-6 h-6 shrink-0"></i>
+                        <span class="text-sm md:text-base">${d.flightInfo}</span>
+                     </div>` : '';
+
                 item.innerHTML = `
-                    <div onclick="this.parentElement.classList.toggle('open')" class="p-8 flex items-center gap-6 cursor-pointer active:bg-gray-50">
+                    <div onclick="this.parentElement.classList.toggle('open')" class="p-8 flex items-center gap-6 cursor-pointer active:bg-gray-50 transition-colors">
                         <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-black text-lg shrink-0 shadow-lg">D${d.day}</div>
                         <div class="flex-1">
                             <span class="text-xs font-black text-[#c6a664] tracking-widest uppercase mb-1 block">${d.date}</span>
@@ -364,11 +416,21 @@
                         <i data-lucide="chevron-down" class="text-gray-300 chevron transition-transform duration-500 w-8 h-8"></i>
                     </div>
                     <div class="accordion-content border-t border-gray-50 bg-[#fdfdfd]">
-                        <div class="p-8 space-y-6">
-                            ${spotsHTML}
-                            <div class="mt-10 p-7 bg-white rounded-[2rem] border border-gray-100 shadow-sm flex flex-col gap-5 text-sm md:text-base">
-                                <div class="flex gap-4"><b>MEALS:</b> ${d.meals}</div>
-                                ${d.stay ? `<div class="flex gap-4 border-t border-gray-100 pt-5"><b>STAY:</b> ${d.stay} ${d.stayUrl ? `<a href="${d.stayUrl}" target="_blank" class="text-blue-400 ml-1"><i data-lucide="map-pin" class="w-3 h-3"></i></a>` : ''}</div>` : ''}
+                        <div class="p-8">
+                            ${flightBarHTML}
+                            <div class="space-y-6">${spotsHTML}</div>
+                            <div class="mt-10 p-7 bg-white rounded-[2rem] border border-gray-100 shadow-sm flex flex-col gap-3 text-sm md:text-base">
+                                <div class="flex items-center gap-3">
+                                   <i data-lucide="utensils-crossed" class="w-5 text-[#c45c45]"></i>
+                                   <p>早: ${d.meals.b} / 午: ${d.meals.l} / 晚: ${d.meals.d}</p>
+                                </div>
+                                ${d.stay ? `<div class="flex items-center gap-3 border-t border-gray-100 pt-3">
+                                   <i data-lucide="hotel" class="w-5 text-blue-600"></i>
+                                   <div class="flex items-center gap-2">
+                                      <span>${d.stay}</span>
+                                      ${d.stayUrl ? `<a href="${d.stayUrl}" target="_blank" class="text-blue-400 ml-1"><i data-lucide="map-pin" class="w-3 h-3"></i></a>` : ''}
+                                   </div>
+                                </div>` : ''}
                             </div>
                         </div>
                     </div>
@@ -381,7 +443,7 @@
             const memoData = [
                 {l:'飲水安全', t:'不可生飲自來水，刷牙建議也使用礦泉水。'},
                 {l:'拍照禮儀', t:'拍攝當地人物務必先徵詢同意或支付小費。'},
-                {l:'網路訊號', t:'山區與沙漠訊號較弱，屬正常現象。建議帶當地 SIM 卡。'},
+                {l:'通訊狀況', t:'山區與沙漠訊號較弱，屬正常現象。建議辦理當地 SIM 卡。'},
                 {l:'貨幣兌換', t:'摩洛哥迪拉姆 (MAD)，建議帶歐元到當地兌換。'},
                 {l:'保險文件', t:'務必攜帶投保證明，包含海外突發疾病及急難救助。'}
             ];
@@ -393,7 +455,7 @@
                 memoList.appendChild(li);
             });
 
-            const items = ['防風保暖外套(羽絨)','薄毛衣/刷毛衛衣','發熱衣/長袖T恤','好走的防滑運動鞋','太陽眼鏡/圍巾/帽','常用藥品(腸胃/感冒)','牙刷/牙膏/拖鞋','護唇/乳液/防曬','雙圓孔轉接頭(220V)','頸枕/保溫瓶'];
+            const items = ['防風保暖外套(羽絨)','薄毛衣/刷毛衛衣','發熱衣/長袖T恤','好走的防滑運動鞋','太陽眼鏡/圍巾/帽','常用藥品(感冒)','牙刷/牙膏/拖鞋','護唇/乳液/防曬','雙圓孔轉接頭(220V)','頸枕/保溫瓶'];
             const packList = document.getElementById('packing-checklist');
             items.forEach(p => {
                 const div = document.createElement('div');
@@ -435,7 +497,7 @@
             });
         }
 
-        // --- 預算與統計功能 ---
+        // --- 預算與統計分析功能 ---
         function addExpense() {
             const cat = document.getElementById('exp-category').value;
             const cur = document.getElementById('exp-currency').value;
@@ -445,7 +507,7 @@
             
             if(content.trim() !== '' && !isNaN(amt)) {
                 expenses.push({id:Date.now(), cat, cur, content, amt});
-                localStorage.setItem('mor_trip_budget_final_v40', JSON.stringify(expenses));
+                localStorage.setItem('mor_trip_budget_final_v500', JSON.stringify(expenses));
                 document.getElementById('exp-content').value = '';
                 document.getElementById('exp-amount').value = '';
                 renderBudget();
@@ -453,7 +515,7 @@
         }
         function deleteExp(id) {
             expenses = expenses.filter(e => e.id !== id);
-            localStorage.setItem('mor_trip_budget_final_v40', JSON.stringify(expenses));
+            localStorage.setItem('mor_trip_budget_final_v500', JSON.stringify(expenses));
             renderBudget();
         }
         function renderBudget() {
